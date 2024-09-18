@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.8.34511.84
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IMDb_obl", "IMDb_obl\IMDb_obl.csproj", "{0350FA00-8E8A-4540-B407-F1C71836557D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0350FA00-8E8A-4540-B407-F1C71836557D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0350FA00-8E8A-4540-B407-F1C71836557D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0350FA00-8E8A-4540-B407-F1C71836557D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0350FA00-8E8A-4540-B407-F1C71836557D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {48BAE9C3-BB00-41D8-B938-4C765B2DA2B5}
+	EndGlobalSection
+EndGlobal

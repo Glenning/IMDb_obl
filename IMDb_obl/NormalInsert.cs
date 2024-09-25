@@ -31,7 +31,7 @@ namespace IMDb_obl
                     "'" + CheckIntForNull(title.EndYear) + "'" +
                     "'" + CheckIntForNull(title.RuntimeMinutes) + "')";
 
-                SqlCommand sqlComm = new SqlCommand(SQL, sqlConn);
+                SqlCommand sqlComm = new SqlCommand(SQL, sqlConn, transAction);
                 sqlComm.ExecuteNonQuery();
             }
         }

@@ -67,10 +67,5 @@ namespace IMDb_obl
             }
             return value;
         }
-
-        string IInsert.CheckIntForNull(int? value)
-        {
-            throw new NotImplementedException();
-        }
     }
 }

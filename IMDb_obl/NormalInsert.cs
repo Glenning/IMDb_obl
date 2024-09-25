@@ -8,11 +8,11 @@ using System.Threading.Tasks;
 
 namespace IMDb_obl
 {
-    public class NormalInsert
+    public class NormalInsert : IInsert
     {
         public NormalInsert() { }
 
-        public void Insert(List<Title> titles, SqlConnection sqlConn) //need to do the whole sqlconn
+        public void Insert(List<Title> titles, SqlConnection sqlConn, SqlTransaction transAction) //need to do the whole sqlconn
         {
             foreach (Title title in titles)
             {
@@ -24,7 +24,7 @@ namespace IMDb_obl
                     "[endYear]," +
                     "[runtimeMinutes])" +
                     "VALUES('" + title.Tconst + "', " +
-                    "'" + title.PrimaryTitle.Replace("'","''") + "', " + //replaces entries with single quote with double single quote (french grammar y'know)
+                    "'" + title.PrimaryTitle.Replace("'", "''") + "', " + //replaces entries with single quote with double single quote (french grammar y'know)
                     "'" + title.OriginalTitle.Replace("'", "''") + "', " +
                     "'" + title.IsAdult + "'" +
                     "'" + CheckIntForNull(title.StartYear) + "'" +

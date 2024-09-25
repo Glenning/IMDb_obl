@@ -2,6 +2,22 @@
 using IMDb_obl.Models;
 using Microsoft.Data.SqlClient;
 
+IInsert inserter;
+Console.WriteLine("Press 1 for normal\r\nPress 2 for prepared");
+string input = Console.ReadLine();
+
+switch (input)
+{
+    case "1":
+        inserter = new NormalInsert();
+        break;
+    case "2":
+        inserter = new PreparedInserter();
+        break;
+    default:
+        throw new Exception("nej");
+}
+
 int lineCount = 0;
 
 List<Title> titles = new List<Title>();
@@ -47,13 +63,15 @@ SqlConnection sqlConn = new SqlConnection("server=localhost;database=IMDb_obl;" 
                                           "password=dennyepassword;" +
                                           "TrustServerCertificate=false;");
 sqlConn.Open();
-SqlTransaction transAction = sqlConn.BeginTransaction();
+SqlTransaction transAction = sqlConn.BeginTransaction(); //rolls back since this is just a WIP
 
 DateTime before = DateTime.Now;
+
 try
 {
-    NormalInsert inserter = new NormalInsert();
     inserter.Insert(titles, sqlConn);
+    transAction.Rollback();
+
 } catch (SqlException ex)
 {
     Console.WriteLine(ex.Message);
@@ -64,7 +82,7 @@ DateTime after = DateTime.Now;
 
 sqlConn.Close();
 
-Console.WriteLine($"Time taken: {after}");
+Console.WriteLine("ms passed: " + (after - before).TotalMilliseconds);
 
 int? ParseInt(string value)
 {

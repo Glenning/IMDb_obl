@@ -15,7 +15,7 @@ switch (input)
         inserter = new PreparedInserter();
         break;
     case "3":
-        inserter = BulkInserter();
+        inserter = new BulkInserter();
         break;
     default:
         throw new Exception("nej");
